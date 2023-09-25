@@ -19,6 +19,8 @@
 ## Usage
 
 ```csharp
+using SDWebImageXamarin;
+
 // Creeate imageView or loaded from XIB
 var imageView = new UIImageView();
 
