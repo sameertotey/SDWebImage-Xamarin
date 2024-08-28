@@ -11,8 +11,8 @@ prepare:
 	curl -L https://github.com/SDWebImage/SDWebImage/archive/refs/tags/${NATIVE_RELEASE}.zip | tar xz
 	
 xcodebuild:
-	xcodebuild -project $(SRC_FOLDER)/$(PROJ_NAME) build -target "SDWebImage static" -sdk iphonesimulator$(SDK) IPHONEOS_DEPLOYMENT_TARGET=12.0 EXCLUDED_ARCHS="arm64"
-	xcodebuild -project $(SRC_FOLDER)/$(PROJ_NAME) build -target "SDWebImage static" -sdk iphoneos$(SDK) IPHONEOS_DEPLOYMENT_TARGET=12.0
+	xcodebuild -project $(SRC_FOLDER)/$(PROJ_NAME) build -target "SDWebImage static" -sdk iphonesimulator$(SDK) IPHONEOS_DEPLOYMENT_TARGET=13.0 
+	xcodebuild -project $(SRC_FOLDER)/$(PROJ_NAME) build -target "SDWebImage static" -sdk iphoneos$(SDK) IPHONEOS_DEPLOYMENT_TARGET=13.0
 	lipo -create $(SRC_FOLDER)/build/Release-iphoneos/libSDWebImage.a $(SRC_FOLDER)/build/Release-iphonesimulator/libSDWebImage.a -output ./libSDWebImage.a
 	lipo -info ./libSDWebImage.a
     
